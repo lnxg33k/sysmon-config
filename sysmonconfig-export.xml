@@ -383,6 +383,7 @@
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image-->
 		<ProcessTerminate onmatch="include">
 			<Image condition="begin with">C:\Users</Image> <!--Process terminations by user binaries-->
+			<Image condition="image">C:\Windows\System32\consent.exe</Image>
 		</ProcessTerminate>
 
 		<ProcessTerminate onmatch="exclude">

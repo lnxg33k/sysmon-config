@@ -816,17 +816,11 @@
 		<PipeEvent onmatch="include">
 		</PipeEvent>
 
-	<!--SYSMON EVENT ID 19 & 20 & 21 : WMI EVENT MONITORING [WmiEvent]-->
-		<!--EVENT 19: "WmiEventFilter activity detected"-->
-		<!--EVENT 20: "WmiEventConsumer activity detected"-->
-		<!--EVENT 21: "WmiEventConsumerToFilter activity detected"-->
-
-		<!--ADDITIONAL REFERENCE: [ https://www.darkoperator.com/blog/2017/10/15/sysinternals-sysmon-610-tracking-of-permanent-wmi-events ] -->
-		<!--ADDITIONAL REFERENCE: [ https://rawsec.lu/blog/posts/2017/Sep/19/sysmon-v610-vs-wmi-persistence/ ] -->
-
-		<!--DATA: EventType, UtcTime, Operation, User, Name, Type, Destination, Consumer, Filter-->
-		<WmiEvent onmatch="include">
-		</WmiEvent>
+		<!--Event ID 19: WmiEvent (WmiEventFilter activity detected)-->
+		<!--Event ID 20: WmiEvent (WmiEventConsumer activity detected)-->
+		<!--Event ID 21: WmiEvent (WmiEventConsumerToFilter activity detected)-->
+		<!-- Event ID 19,20,21: - WmiEvent (WmiEventFilter activity detected) -->
+		<WmiEvent onmatch="exclude" />
 
 	<!--SYSMON EVENT ID 255 : ERROR-->
 		<!--"This event is generated when an error occurred within Sysmon. They can happen if the system is under heavy load
